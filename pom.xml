@@ -37,14 +37,15 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <shadedArtifactAttached>true</shadedArtifactAttached>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
                             <shadeSourcesContent>true</shadeSourcesContent>
                             <filters>
                                 <filter>
                                     <artifact>*:*</artifact>
                                     <excludes>
-                                        <exclude>META-INF/maven/**</exclude>
+                                        <exclude>META-INF/MANIFEST.SF</exclude>
+                                        <exclude>META-INF/MANIFEST.MF</exclude>
                                     </excludes>
                                 </filter>
                             </filters>
@@ -60,6 +61,10 @@
                                 <relocation>
                                     <pattern>me.hsgamer.unihologram</pattern>
                                     <shadedPattern>me.hsgamer.gamesinthebox.unihologram</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>me.hsgamer.blockutil</pattern>
+                                    <shadedPattern>me.hsgamer.gamesinthebox.blockutil</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.lewdev.probabilitylib</pattern>
