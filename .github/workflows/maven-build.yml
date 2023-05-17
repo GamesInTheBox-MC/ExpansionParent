@@ -24,6 +24,6 @@ jobs:
       - name: Unshallow
         run: git fetch --unshallow --quiet
       - name: Build with Maven
-        run: mvn -B deploy
+        run: mvn -B deploy --DaltDeploymentRepository=github::https://maven.pkg.github.com/GamesInTheBox-MC/ExpansionParent
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

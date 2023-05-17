@@ -30,52 +30,52 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.4.1</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <shadeSourcesContent>true</shadeSourcesContent>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/maven/**</exclude>
+                                <exclude>META-INF/MANIFEST.SF</exclude>
+                                <exclude>META-INF/MANIFEST.MF</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                    <relocations>
+                        <relocation>
+                            <pattern>me.hsgamer.hscore</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.core</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>me.hsgamer.minigamecore</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.minigamecore</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>me.hsgamer.unihologram</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.unihologram</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>me.hsgamer.blockutil</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.blockutil</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.lewdev.probabilitylib</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.probabilitylib</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.cryptomorin.xseries</pattern>
+                            <shadedPattern>me.hsgamer.gamesinthebox.xseries</shadedPattern>
+                        </relocation>
+                    </relocations>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <shadeSourcesContent>true</shadeSourcesContent>
-                            <filters>
-                                <filter>
-                                    <artifact>*:*</artifact>
-                                    <excludes>
-                                        <exclude>META-INF/maven/**</exclude>
-                                        <exclude>META-INF/MANIFEST.SF</exclude>
-                                        <exclude>META-INF/MANIFEST.MF</exclude>
-                                    </excludes>
-                                </filter>
-                            </filters>
-                            <relocations>
-                                <relocation>
-                                    <pattern>me.hsgamer.hscore</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.core</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>me.hsgamer.minigamecore</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.minigamecore</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>me.hsgamer.unihologram</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.unihologram</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>me.hsgamer.blockutil</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.blockutil</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.lewdev.probabilitylib</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.probabilitylib</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <pattern>com.cryptomorin.xseries</pattern>
-                                    <shadedPattern>me.hsgamer.gamesinthebox.xseries</shadedPattern>
-                                </relocation>
-                            </relocations>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -114,24 +114,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>github</id>
-            <activation>
-                <property>
-                    <name>env.GITHUB_WORKFLOW</name>
-                </property>
-            </activation>
-            <distributionManagement>
-                <repository>
-                    <id>github</id>
-                    <url>https://maven.pkg.github.com/GamesInTheBox-MC/ExpansionParent</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                    </snapshots>
-                </repository>
-            </distributionManagement>
-        </profile>
-    </profiles>
 </project>
