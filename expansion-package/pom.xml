@@ -8,6 +8,7 @@
         <artifactId>expansion-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <packaging>pom</packaging>
 
     <artifactId>expansion-package</artifactId>
 
