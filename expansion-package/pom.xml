@@ -16,6 +16,16 @@
         <plugin.version>1.0.0-SNAPSHOT</plugin.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/GamesInTheBox-MC/GamesInTheBox</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>me.hsgamer</groupId>
