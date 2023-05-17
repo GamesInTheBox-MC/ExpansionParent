@@ -12,6 +12,7 @@
     <properties>
         <java.version>1.8</java.version>
         <spigot.version>1.12.2-R0.1-SNAPSHOT</spigot.version>
+        <shade.attachedArtifact>false</shade.attachedArtifact>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -32,6 +33,7 @@
                 <version>3.4.1</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <shadedArtifactAttached>${shade.attachedArtifact}</shadedArtifactAttached>
                     <shadeSourcesContent>true</shadeSourcesContent>
                     <filters>
                         <filter>
