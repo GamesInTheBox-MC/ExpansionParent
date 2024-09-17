@@ -6,7 +6,7 @@
 
     <groupId>me.hsgamer.gamesinthebox</groupId>
     <artifactId>expansion-parent</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -55,11 +55,11 @@
                             <shadedPattern>me.hsgamer.gamesinthebox.minigamecore</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>me.hsgamer.unihologram</pattern>
+                            <pattern>io.github.projectunified.unihologram</pattern>
                             <shadedPattern>me.hsgamer.gamesinthebox.unihologram</shadedPattern>
                         </relocation>
                         <relocation>
-                            <pattern>me.hsgamer.blockutil</pattern>
+                            <pattern>io.github.projectunified.blockutil</pattern>
                             <shadedPattern>me.hsgamer.gamesinthebox.blockutil</shadedPattern>
                         </relocation>
                         <relocation>
